@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seamless File Sharing Made Simple</title>
+    <link rel="stylesheet" href="assets/css/index.css" />
+  </head>
+  <body>
+    <h1 class="heading">Seamless File Sharing Made Simple</h1>
+    <p class="sub-heading">Share files quickly, easily, and worry-free.</p>
+    <div class="container">
+      <!-- Loading mask -->
+      <div id="loadingIndicator" class="loading-mask">
+        <div class="spinner"></div>
+        <div class="loading-text">Uploading...</div>
+      </div>
+
+      <div id="wrapper" class="wrapper">
+        <div id="dropArea" class="drag-drop-area">
+          <img src="assets/images/2270665.png" />
+          <h2 class="dropArea-text">
+            Drag and drop files here or
+            <span id="selectFileText" class="custom-file-upload"
+              >select file</span
+            >
+            from your computer
+          </h2>
+          <p class="maxSize">Max file size: 2GB</p>
+        </div>
+        <p id="selectFileWarning" class="warning-text">Please select a file.</p>
+        <div id="fileInfo" class="file-info">
+          <div>
+            <i class="fa-solid fa-paperclip"></i><span class="file-name"></span>
+          </div>
+          <button class="remove-button" onclick="removeFile()">Remove</button>
+        </div>
+        <button class="sendBtn" onclick="sendFile()">Send</button>
+      </div>
+
+      <div id="successMessage">
+        <h2>Upload successful!</h2>
+        <h3>Copy the download link below or scan the QR code.</h3>
+        <div class="copy-text">
+          <input type="text" class="text" id="fileLink" value="" readonly />
+          <button onclick="copyLink()">Copy Link</button>
+        </div>
+        <div id="qrcode"></div>
+        <button class="sendBtn" onclick="startOver()">Start Over</button>
+      </div>
+    </div>
+    <p class="deleteInfo">
+      Once your file is downloaded by the intended recipient, it's deleted
+      permanently.
+    </p>
+    <!-- Fixed black banner -->
+    <div class="black-banner">
+      Powered by <a target="_blank" href="https://file.io/">File IO</a> API for
+      secure file transfer.
+    </div>
+    <script src="assets/js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  </body>
+</html>

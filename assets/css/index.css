@@ -1,0 +1,335 @@
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Base styles */
+html {
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+    background-image: url(../images/original_1st-C1xDGPCvqP8-unsplash.jpg);
+    background-color: #67CCFA;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: hwb(0 0% 100% / 0.607);
+    /* Add a black background */
+}
+
+/* Mask for loading indicator */
+.black-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    z-index: 1;
+}
+
+/* Typography */
+.heading {
+    font-size: 3rem;
+    color: white;
+}
+
+.sub-heading {
+    padding: 0rem 5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 400px;
+    align-items: center;
+    border-radius: 2rem;
+    padding: 2rem;
+    background-color: white;
+}
+
+.deleteInfo {
+    color: white;
+    margin-top: 1rem;
+}
+
+#successMessage {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+#successMessage h2 {
+    text-align: "center";
+
+}
+
+#successMessage h3 {
+    font-weight: normal;
+    margin-top: "0.5rem";
+}
+
+#qrcode {
+    margin-top: 1rem;
+}
+
+/* File Upload Styles */
+.drag-drop-area {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #4788A6;
+    border-radius: 15px;
+    cursor: pointer;
+    color: #4788A6;
+    font-size: 0.9rem;
+}
+
+.drag-drop-area h2 {
+    margin-bottom: 10px;
+}
+
+.drag-drop-area img{
+    width: 50px ;
+    height: 50px;
+    margin-bottom: 1rem;
+}
+
+.file-info {
+    display: none;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 1rem;
+    border: 1px solid #4788A6;
+    border-radius: 1rem;
+}
+
+.file-name {
+    margin-left: 0.5rem;
+}
+
+.remove-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custom-file-upload {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.container-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.sendBtn {
+    background-color: #4788A6;
+    padding: 1rem;
+    border-radius: 2rem;
+    outline: none;
+    border: 0;
+    color: white;
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.sendBtn:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.wrapper {
+    width: 80%;
+    height: 100%;
+}
+
+/* Black Banner */
+.black-banner {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.black-banner a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.black-banner a:hover {
+    color: #fff;
+    opacity: 0.8;
+}
+
+/* Copy Text */
+.copy-text {
+    position: relative;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.copy-text input.text {
+    flex: 1;
+    padding: 10px;
+    font-size: 18px;
+    color: #555;
+    border: none;
+    outline: none;
+}
+
+.copy-text button {
+    padding: 10px;
+    background: #4788A6;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.copy-text button:active {
+    background: #4788A6;
+}
+
+.copy-text button:before {
+    content: "Copied";
+    position: absolute;
+    top: -45px;
+    right: 0px;
+    background: #4788A6;
+    padding: 8px 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    display: none;
+}
+
+.copy-text button:after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: 25px;
+    width: 10px;
+    height: 10px;
+    background: #4788A6;
+    transform: rotate(45deg);
+    display: none;
+}
+
+.copy-text.active button:before,
+.copy-text.active button:after {
+    display: block;
+}
+
+/* Warning Text */
+.warning-text {
+    display: none;
+    color: red;
+}
+
+.maxSize {
+    margin-top: 1rem;
+}
+
+.dropArea-text {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* Loading Mask */
+.loading-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Spinner */
+.spinner {
+    position: relative;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+/* Loading Text Animation */
+.loading-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+    opacity: 1;
+    animation: fade 2s infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fade {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
