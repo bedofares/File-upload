@@ -288,7 +288,7 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    border-radius: 1rem;
+    border-radius: 2rem;
 }
 
 /* Spinner */
